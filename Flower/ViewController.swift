@@ -11,6 +11,7 @@ import CoreML
 import Vision
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -36,7 +37,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             
-            photoView.image = userPickedImage
+            //photoView.image = userPickedImage
             
             guard let convertedCiImage = CIImage(image: userPickedImage) else {
                 fatalError("can't convert to CIImage")
@@ -83,12 +84,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let parameters : [String:String] = [
             "format" : "json",
             "action" : "query",
-            "prop" : "extracts",
+            "prop" : "extracts|pageimages",
             "exintro" : "",
             "explaintext" : "",
             "titles" : flowerName,
             "indexpageids" : "",
             "redirects" : "1",
+            "pithubsize" : "500"
         ]
         
         Alamofire.request(wikiURL, method: .get, parameters: parameters).responseJSON { (response) in
@@ -102,15 +104,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
                 let flowerDescription = flowerJSON["query"]["pages"][pageId]["extract"].stringValue
                 
+                let flowerImageURL = flowerJSON["query"]["pages"][pageId]["thumbnail"]["source"].stringValue
+                
+                self.photoView.sd_setImage(with: URL(string: flowerImageURL))
+                
+                
                 self.label.text = flowerDescription
                 
             }
         }
-        
-        
-        
-        
-        
+     
     }
     
     
