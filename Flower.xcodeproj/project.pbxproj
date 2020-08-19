@@ -13,6 +13,7 @@
 		7DF029A024ED075100C46799 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF0299E24ED075100C46799 /* Main.storyboard */; };
 		7DF029A224ED075400C46799 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DF029A124ED075400C46799 /* Assets.xcassets */; };
 		7DF029A524ED075400C46799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF029A324ED075400C46799 /* LaunchScreen.storyboard */; };
+		7DF029AD24ED083400C46799 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7DF029AC24ED083400C46799 /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7DF029A124ED075400C46799 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DF029A424ED075400C46799 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DF029A624ED075400C46799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DF029AC24ED083400C46799 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				7DF029A124ED075400C46799 /* Assets.xcassets */,
 				7DF029A324ED075400C46799 /* LaunchScreen.storyboard */,
 				7DF029A624ED075400C46799 /* Info.plist */,
+				7DF029AC24ED083400C46799 /* FlowerClassifier.mlmodel */,
 			);
 			path = Flower;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF029AD24ED083400C46799 /* FlowerClassifier.mlmodel in Sources */,
 				7DF0299D24ED075100C46799 /* ViewController.swift in Sources */,
 				7DF0299924ED075100C46799 /* AppDelegate.swift in Sources */,
 				7DF0299B24ED075100C46799 /* SceneDelegate.swift in Sources */,
