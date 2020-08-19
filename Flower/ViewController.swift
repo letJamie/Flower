@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBOutlet weak var label: UILabel!
     
     let wikiURL = "https://en.wikipedia.org/w/api.php"
     
@@ -94,6 +95,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             if response.result.isSuccess {
                 print("got the wiki info")
                 print(response)
+                
+                let flowerJSON: JSON = JSON(response.result.value!)
+                
+                let pageId = flowerJSON["query"]["pageids"][0].stringValue
+                
+                let flowerDescription = flowerJSON["query"]["pages"][pageId]["extract"].stringValue
+                
+                self.label.text = flowerDescription
+                
             }
         }
         
